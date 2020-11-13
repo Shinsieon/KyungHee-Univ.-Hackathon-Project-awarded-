@@ -51,7 +51,7 @@ body label {
     text-align: center;
 
 }
-#button_box #start_btn{
+#button_box #start_btn, .go_link_btn{
     background:black;
     color:#fff;
     border:none;
@@ -63,11 +63,11 @@ body label {
     transition:800ms ease all;
     outline:none;
   }
-  #button_box #start_btn:hover{
+  #button_box #start_btn:hover, .go_link_btn:hover{
     background:#fff;
     color:#1AAB8A;
   }
-  #button_box #start_btn:before,#button_box #start_btn:after{
+  #button_box #start_btn:before,#button_box #start_btn:after, .go_link_btn:before, .go_link_btn:after{
     content:'';
     position:absolute;
     top:0;
@@ -77,7 +77,7 @@ body label {
     background: #f9f1f1;
     transition:400ms ease all;
   }
-  #button_box #start_btn:after{
+  #button_box #start_btn:after, .go_link_btn:after{
     right:inherit;
     top:inherit;
     left:0;
@@ -99,7 +99,7 @@ body label {
     height: 400px;
     border : 1px solid #dfddda;
     border-radius: 5px;
-    display:block;
+    display:none;
 }
 .survey_nav{
     height: 20%;
