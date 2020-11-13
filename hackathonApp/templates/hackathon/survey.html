@@ -1,0 +1,198 @@
+{% extends 'hackathon/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class='survey_container' id="question1">
+        <div class='survey_nav'>
+            <div class="survey_nav_wrap">
+                <div class="survey_nav_content">
+                    <div class="category_left-on"><span>기본정보</span></div>
+                    <div class="category_right"><span class="material-icons" style="font-size: 50px;height:100%;">navigate_next</span></div>
+                </div>
+                <div class="survey_nav_content">
+                    <div class="category_left"><span>식습관</span></div>
+                    <div class="category_right"><span class="material-icons" style="font-size: 50px;height:100%;">navigate_next</span></div>
+                </div>
+                <div class="survey_nav_content">
+                    <div class="category_left"><span>생활 습관</span></div>
+                    <div class="category_right"><span class="material-icons" style="font-size: 50px;height:100%;">navigate_next</span></div>
+                </div>
+                <div class="survey_nav_content">
+                    <div class="category_left"><span>기타</span></div>
+                </div>
+            </div>
+        </div>
+        <div class='survey_box'>
+            <div class="back_box">
+                <a onclick="bfbtn()"><img style="width:50px;height:50px;" src="{% static 'images/to_left.png' %}"></img></a>
+            </div>
+            <div class="question_wrap">
+                <div class="question_box">
+                    <h2 class='question_number'>
+                        질문 1
+                    </h2>
+                    <p class='question'>
+                    당신의 이름을 입력해주세요.
+                    </p>
+                </div>
+                <div class="answer_box">
+                    <div class="group">      
+                        <input type="text" id='user_name' required >
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Name</label>
+                    </div>
+                </div>
+            </div>
+            <div class="next_box">
+                <a onclick="nextbtn()"><img style="width:50px;height:50px;" src="{% static 'images/to_right.png' %}"></img></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- --------------------------------------    -->
+</div>
+</div>
+<div class='dummy'>
+    <div class='survey_container' id="select_question4" >
+        <div class='survey_nav'>
+            <div class="survey_nav_wrap">
+                <div class="survey_nav_content">
+                    <div class="category_left"><span>기본정보</span></div>
+                    <div class="category_right"><span class="material-icons" style="font-size: 50px;height:100%;">navigate_next</span></div>
+                </div>
+                <div class="survey_nav_content">
+                    <div class="category_left-on"><span>식습관</span></div>
+                    <div class="category_right"><span class="material-icons" style="font-size: 50px;height:100%;">navigate_next</span></div>
+                </div>
+                <div class="survey_nav_content">
+                    <div class="category_left"><span>생활 습관</span></div>
+                    <div class="category_right"><span class="material-icons" style="font-size: 50px;height:100%;">navigate_next</span></div>
+                </div>
+                <div class="survey_nav_content">
+                    <div class="category_left"><span>기타</span></div>
+                </div>
+            </div>
+        </div>
+        <div class='survey_box'>
+            <div class="back_box">
+                <a onclick="bfbtn()"><img style="width:50px;height:50px;" src="{% static 'images/to_left.png' %}"></img></a>
+            </div>
+            <div class="question_wrap">
+                <div class="question_box">
+                    <h2 class='question_number'>
+                        질문4
+                    </h2>
+                    <p class='question'>
+                    일주일에 피자를 얼마나 드시나요?
+                    </p>
+                </div>
+                
+                <div class="select_box">
+                        <div><input type="radio" class="option-input radio" name='FF_PIZZA' value='1'/>거의 안 먹음</div>
+                        <div><input type="radio" class="option-input radio" name='FF_PIZZA' value='2' />월 1회</div>
+                        <div><input type="radio" class="option-input radio" name='FF_PIZZA' value='3' />월 2~3회</div>
+                        <div><input type="radio" class="option-input radio" name='FF_PIZZA' value='4' />주 1회</div>
+                        <div><input type="radio" class="option-input radio" name='FF_PIZZA' value='5' />주 2~4회</div>
+                        <div><input type="radio" class="option-input radio" name='FF_PIZZA' value='6' />주 5~6회</div>
+                        <div><input type="radio" class="option-input radio" name='FF_PIZZA' value='7' />일 1회</div>
+                        <div><input type="radio" class="option-input radio" name='FF_PIZZA' value='8' />일 2회</div>
+                        <div><input type="radio" class="option-input radio" name='FF_PIZZA' value='9' />일 3회</div>
+
+                </div>
+            </div>
+            <div class="next_box">
+                <a onclick="nextbtn()"><img style="width:50px;height:50px;" src="{% static 'images/to_right.png' %}"></img></a>
+            </div>
+        </div>
+    </div>
+<!-- ====================================================  -->
+
+    <div class='survey_container' id="exer_select_question21" >
+        <div class='survey_nav'>
+            <div class="survey_nav_wrap">
+                <div class="survey_nav_content">
+                    <div class="category_left"><span>기본정보</span></div>
+                    <div class="category_right"><span class="material-icons" style="font-size: 50px;height:100%;">navigate_next</span></div>
+                </div>
+                <div class="survey_nav_content">
+                    <div class="category_left"><span>식습관</span></div>
+                    <div class="category_right"><span class="material-icons" style="font-size: 50px;height:100%;">navigate_next</span></div>
+                </div>
+                <div class="survey_nav_content">
+                    <div class="category_left-on"><span>운동 습관</span></div>
+                    <div class="category_right"><span class="material-icons" style="font-size: 50px;height:100%;">navigate_next</span></div>
+                </div>
+                <div class="survey_nav_content">
+                    <div class="category_left"><span>결과</span></div>
+                </div>
+            </div>
+        </div>
+        <div class='survey_box'>
+            <div class="back_box">
+                <a onclick="bfbtn()"><img style="width:50px;height:50px;" src="{% static 'images/to_left.png' %}"></img></a>
+            </div>
+            <div class="question_wrap">
+                <div class="question_box">
+                    <h2 class='question_number'>
+                        질문21
+                    </h2>
+                    <p class='question'>
+                    일주일에 얼마나 근력운동 하시나요?
+                    </p>
+                </div>
+                
+                <div class="select_box">
+                        <div><input type="radio" class="option-input radio" name='BE5_1' value='1'/>0~3 시간</div>
+                        <div><input type="radio" class="option-input radio" name='BE5_1' value='2' />3~6 시간</div>
+                        <div><input type="radio" class="option-input radio" name='BE5_1' value='3' />6~9 시간</div>
+                        <div><input type="radio" class="option-input radio" name='BE5_1' value='4' />9~12 시간</div>
+                        <div><input type="radio" class="option-input radio" name='BE5_1' value='5' />12~15 시간</div>
+                        <div><input type="radio" class="option-input radio" name='BE5_1' value='6' />15시간 이상</div>
+                </div>
+            </div>
+            <div class="next_box">
+                <a onclick="nextbtn()"><img style="width:50px;height:50px;" src="{% static 'images/to_right.png' %}"></img></a>
+            </div>
+        </div>
+    </div>
+
+    <div id='button_box'>
+        <a onclick="showResult()"><button id='start_btn' style="display: none;">시작하기</button></a>
+    </div>
+    <form id='form_survey' action="/result/" method="post">
+        {% csrf_token %}
+        <input type='hidden' id='user_name_hid' name='user_name_hid'>
+        <input type='hidden' id='user_height_hid'name='user_height_hid'>
+        <input type='hidden' id='user_weight_hid'name='user_weight_hid'>
+
+        <input type='hidden' id='FF_PIZZA_hid'name='FF_PIZZA_hid'>
+        <input type='hidden' id='FF_HAMBER_hid'name='FF_HAMBER_hid'>
+        <input type='hidden' id='FF_F_CHIC_hid'name='FF_F_CHIC_hid'>
+        <input type='hidden' id='FF_INSTNO_hid'name='FF_INSTNO_hid'>
+        
+        <input type='hidden' id='FF_ICECM_hid'name='FF_ICECM_hid'>
+        <input type='hidden' id='FF_SNACK_hid'name='FF_SNACK_hid'>
+        <input type='hidden' id='FF_CHOCO_hid'name='FF_CHOCO_hid'>
+        <input type='hidden' id='FF_MILK_hid'name='FF_MILK_hid'>
+
+        <input type='hidden' id='FF_SOJU_hid'name='FF_SOJU_hid'>
+        <input type='hidden' id='FF_BEER_hid'name='FF_BEER_hid'>
+        <input type='hidden' id='FF_RWINE_hid'name='FF_RWINE_hid'>
+        
+        <input type='hidden' id='FF_SPROU_hid'name='FF_SPROU_hid'>
+        <input type='hidden' id='FF_VSALAD_hid'name='FF_VSALAD_hid'>
+        <input type='hidden' id='FF_F_EGG_hid'name='FF_F_EGG_hid'>
+        <input type='hidden' id='FF_MACKER_hid'name='FF_MACKER_hid'>
+        <input type='hidden' id='FF_J_SOYP_hid'name='FF_J_SOYP_hid'>
+        <input type='hidden' id='FF_J_KIMC_hid'name='FF_J_KIMC_hid'>
+
+        <input type='hidden' id='BE5_1_hid'name='BE5_1_hid'>
+        <input type='hidden' id='BE3_31_hid'name='BE3_31_hid'>
+        <input type='hidden' id='BE8_1_hid'name='BE8_1_hid'>
+
+    </form>
+</div>
+
+{% endblock %}

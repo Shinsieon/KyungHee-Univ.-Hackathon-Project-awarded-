@@ -1,0 +1,30 @@
+{% extends 'hackathon/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="result_container">
+    <div id="result_title">
+        <h2>{{ user_name }}님은</h1>
+        <p>만취한 꽐라형 확찐자입니다!</p>
+        <p>{{ user_height }}</p>
+        <img style="width:150px;height:150px;" src="{% static 'images/drunken.png' %}"></img>
+    </div>
+</div>
+<!-- --------------------------  -->
+
+<div class="result_container" style="height:100px;">
+    <div id='predict_title'>
+        <p>당신의 예상 몸무게는 85KG입니다. BMI는 26으로 경도비만군에 속합니다.</h2>
+            {{ pre }}
+            {{ m_i }}
+    </div>
+</div>
+<!-- --------------------------  -->
+<div class="result_container">
+    <div id='result_detail'>
+        <h2>그래프창</h2>
+    </div>
+</div>
+
+
+{% endblock %}

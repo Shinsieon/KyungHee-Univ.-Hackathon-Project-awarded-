@@ -1,0 +1,31 @@
+{% extends 'hackathon/base.html' %}
+{% load static %}
+
+{% block content %}
+<div id='main_container'>
+    <div id='main_left_box'>
+        <div style="height:20%;">
+        </div>
+        <div id="title_box">
+            <p>인공지능</p>
+            <p style="color: #ff7f50; font-size: 70px;">확찐자</p>
+            <p>예측 모델</p>
+        </div>
+    </div>
+    <div id='main_right_box'>
+        <div style="height:30%">
+            <img style="width:50%;height:90%;" src="{% static 'images/logo_right.png' %}"></img>
+        </div>
+        <div id="right_text_box">
+            <p>
+                내 식습관으로               
+            </p>
+            <p>보는 </p>
+            <p style="font-size: 50px;text-align: center;color: #ff7f50;"> BMTI </p>
+        </div>
+        <div id='button_box'>
+            <a href="{% url 'survey' %}"><button id='start_btn'>시작하기</button></a>
+        </div>
+    </div>
+</div>
+{% endblock %}
