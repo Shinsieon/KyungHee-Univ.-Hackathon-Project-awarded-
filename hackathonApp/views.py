@@ -19,8 +19,9 @@ def survey(request):
 def result(request):
     if request.method == 'POST':
         user_name = request.POST.get('user_name_hid')
-        user_height = request.POST.get('user_height')
-        user_weight = request.POST.get('user_weight')
+        user_height = request.POST.get('user_height_hid')
+        user_weight = request.POST.get('user_weight_hid')
+        
         FF_PIZZA = request.POST.get('FF_PIZZA_hid')
         FF_HAMBER = request.POST.get('FF_HAMBER_hid')
         FF_F_CHIC = request.POST.get('FF_F_CHIC_hid')
@@ -35,7 +36,6 @@ def result(request):
         FF_BEER = request.POST.get('FF_BEER_hid')
         FF_RWINE = request.POST.get('FF_RWINE_hid')
 
-        FF_KIMCHI  = request.POST.get('FF_KIMCHI_hid')
         FF_SPROU =request.POST.get('FF_SPROU_hid')
         FF_VSALAD = request.POST.get('FF_VSALAD_hid')
         FF_F_EGG = request.POST.get('FF_F_EGG_hid')
@@ -48,18 +48,18 @@ def result(request):
         BE8_1  = request.POST.get('BE8_1_hid')
 
 
-    model_input = [FF_PIZZA, FF_HAMBER, FF_F_CHIC, FF_INSTNO, FF_ICECM, FF_SNACK,FF_CHOCO, FF_MILK, FF_SOJU, FF_BEER, FF_RWINE, FF_RWINE,FF_KIMCHI, FF_SPROU, FF_VSALAD, FF_F_EGG, FF_MACKER, FF_J_SOYP, FF_J_KIMC]
+    model_input = [FF_PIZZA, FF_HAMBER, FF_F_CHIC, FF_INSTNO, FF_ICECM, FF_SNACK,FF_CHOCO, FF_MILK, FF_SOJU, FF_BEER, FF_RWINE, FF_SPROU, FF_VSALAD, FF_F_EGG, FF_MACKER, FF_J_SOYP, FF_J_KIMC, BE5_1, BE3_31, BE8_1]
 
-    model_fake= [1,2,3,4,5,1,2,3,4,5,1,1,2,3]
     with open('models/regr.pkl', 'rb') as f:
         data = pickle.load(f)
 
-    pre = data.predict(np.array(model_fake).reshape(1,-1))
+    predict_bmi = data.predict(np.array(model_input).reshape(1,-1))
 
     context = {
         'user_name' : user_name,
         'user_height' : user_height,
-        'pre' : pre,
-        'm_i' : model_input,
+        'user_weight' : user_weight,
+        'predict_bmi' : predict_bmi,
+        'model_input' : model_input,
     }
     return render(request, 'hackathon/result.html',context)

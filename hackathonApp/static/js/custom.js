@@ -12,7 +12,7 @@ $(document).ready(function(){
     MakeSelectSurvey(11,'질문11','일주일에 우유 얼마나 드시나요?','FF_MILK');
     MakeSelectSurvey(12,'질문12','일주일에 소주 얼마나 드시나요?','FF_SOJU');
     MakeSelectSurvey(13,'질문13','일주일에 맥주 얼마나 드시나요?','FF_BEER');
-    MakeSelectSurvey(14,'질문14','일주일에 막걸리 얼마나 드시나요?','FF_RWINE ');
+    MakeSelectSurvey(14,'질문14','일주일에 막걸리 얼마나 드시나요?','FF_RWINE');
     MakeSelectSurvey(15,'질문15','일주일에 콩나물 얼마나 드시나요?','FF_SPROU');
     MakeSelectSurvey(16,'질문16','일주일에 채소샐러드 얼마나 드시나요?','FF_VSALAD');
     MakeSelectSurvey(17,'질문17','일주일에 달걀후라이/달갈말이 얼마나 드시나요?','FF_F_EGG');
@@ -116,6 +116,7 @@ function showResult(){
     var user_name = $('#user_name').val();
     var user_height = $('#user_height').val();
     var user_weight = $('#user_weight').val();
+    
     var FF_PIZZA = $('input[name=FF_PIZZA]:checked').val();
     var FF_HAMBER = $('input[name=FF_HAMBER]:checked').val();
     var FF_F_CHIC = $('input[name=FF_F_CHIC]:checked').val();
@@ -124,22 +125,26 @@ function showResult(){
     var FF_ICECM = $('input[name=FF_ICECM]:checked').val();
     var FF_SNACK = $('input[name=FF_SNACK]:checked').val();
     var FF_CHOCO = $('input[name=FF_CHOCO]:checked').val();
-    var FF_MILK = $('#input[name=FF_MILK]:checked').val();
+    var FF_MILK = $('input[name=FF_MILK]:checked').val();
 
     var FF_SOJU = $('input[name=FF_SOJU]:checked').val();
     var FF_BEER = $('input[name=FF_BEER]:checked').val();
     var FF_RWINE = $('input[name=FF_RWINE]:checked').val();
 
-    var FF_SPROU = $('#input[name=FF_SPROU]:checked').val();
-    var FF_VSALAD = $('#input[name=FF_VSALAD]:checked').val();
-    var FF_F_EGG = $('#input[name=FF_F_EGG]:checked').val();
-    var FF_MACKER = $('#input[name=FF_MACKER]:checked').val();
+    var FF_SPROU = $('input[name=FF_SPROU]:checked').val();
+    var FF_VSALAD = $('input[name=FF_VSALAD]:checked').val();
+    var FF_F_EGG = $('input[name=FF_F_EGG]:checked').val();
+    var FF_MACKER = $('input[name=FF_MACKER]:checked').val();
     var FF_J_SOYP = $('input[name=FF_J_SOYP]:checked').val();
     var FF_J_KIMC = $('input[name=FF_J_KIMC]:checked').val();
 
     var BE5_1 = $('input[name=BE5_1]:checked').val();
     var BE3_31 = $('input[name=BE3_31]:checked').val();
     var BE8_1 = $('input[name=BE8_1]:checked').val();
+
+    var items = [FF_PIZZA, FF_HAMBER, FF_F_CHIC, FF_INSTNO, FF_ICECM, FF_SNACK,FF_CHOCO, FF_MILK, FF_SOJU, FF_BEER, FF_RWINE, FF_SPROU, FF_VSALAD, FF_F_EGG, FF_MACKER, FF_J_SOYP, FF_J_KIMC, BE5_1, BE3_31, BE8_1];
+
+    localStorage.setItem("item", JSON.stringify(items));
 
     $('#user_name_hid').val(user_name);
     $('#user_height_hid').val(user_height); 
@@ -168,19 +173,16 @@ function showResult(){
     $('#BE5_1_hid').val(BE5_1); 
     $('#BE3_31_hid').val(BE3_31); 
     $('#BE8_1_hid').val(BE8_1); 
-    
+
+
     $('#form_survey').submit();
     console.log(user_name);
 }
 
 
 function banchangraph(x,y) {
-    var ctx = document.getElementById('returngraph').getContext('2d');
-    var x_date = x;
-    var y_return = y;
+    var ctx = document.getElementById('bc_canvas').getContext('2d');
 
-    x_date = slicing(x_date);
-    y_return= slicing(y_return);
     
     window.chart1 = new Chart(ctx, {
         type: 'line',

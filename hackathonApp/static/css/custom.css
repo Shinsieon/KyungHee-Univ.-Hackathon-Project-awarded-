@@ -99,7 +99,7 @@ body label {
     height: 400px;
     border : 1px solid #dfddda;
     border-radius: 5px;
-    display:none;
+    display:block;
 }
 .survey_nav{
     height: 20%;
@@ -339,14 +339,15 @@ body label {
     border-radius: 50%;
   }
   
-  /* --------------------------------------*/
+  /* --------------------------------------------------------*/
 
   .result_container{
     background-color: white;
     border-image: Linear-gradient(to right, #555 0%, rgba(0,0,255,0)  100%);
-    margin : 30px 10px;
+    margin : 150px 10px;
     height: 400px;
-    border : 1px solid #dfddda;
+    border-top : 1px solid #dfddda;
+    border-bottom : 1px solid #dfddda;
     border-radius: 5px;
     display:block;
 }
@@ -355,4 +356,39 @@ body label {
     text-align: center;
     font-family: 'Black Han Sans', sans-serif;
     font-size: 25px;
+}
+
+.left_graph{
+  width:50%;
+  height:100%;
+}
+.right_graph{
+  width:50%;
+  height:100%;
+}
+.pie-chart {
+  max-width: 500px;
+  margin: 80px auto;
+}
+
+.d3-tip {
+  font-size: 14px;
+  transition: 0.3s opacity linear, 0.3s transform linear;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 10px 15px;
+  transform: translateY(-10px);
+  color: #333;
+  text-align: center;
+}
+.d3-tip p {
+  margin: 0;
+  padding: 0;
+}
+.d3-tip.is-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.d3-tip__label {
+  font-weight: bold;
 }
