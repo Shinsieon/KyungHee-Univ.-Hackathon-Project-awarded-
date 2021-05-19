@@ -22,6 +22,22 @@ _Note: This is only a navigation guide for the specification, and does not defin
   * 20세 이상부터 40세 미만까지의 데이터만을 추출
   * Feature Selection : BMI에 가장 영향을 많이 미치는 음식을 선정.
   * RandomForest 변수중요도 분석과 R을 활용한 연관도 분석 결과가 대중적으로 생각하는 BMI에 영향을 미칠만한 음식이 등장하지 않아 일부는 분석가의 재량에 따라 선정
+  * 통계적 유의미성을 찾기 위해 OLS 분석의 P-value값과 VIF 값을 확인하여 변수 제거
   * 선택된 Feature : `키`, `몸무게`, `나이`, `피자`,`햄버거`,`치킨`,`라면`,`아이스크림`,`과자`,`초콜릿`, `우유`, `소주`, `맥주`, `막걸리`,`콩나물`,`채소샐러드`,`달걀후라이/달걀말이`,
   `고등어/꽁치`,`된장찌개`, `김치찌개`
-  
+  * 종속변수 : BMI
+- 모델
+  * RandomForest Regressor :  ensemble learning method를 사용하는 Supervised Learning algorithm이다. 훈련 시간에 다수의 decision tree를 구성하고 개별 트리의 클래스 모드(classification) 또는 평균 예측(regression)인 클래스를 출력하여 작동한다. 사용 가능한 가장 정확한 learning algorithm 중 하나라고 한다.
+- 성능
+  * Mean_squared_error: 0.136
+ 
+### UI
+- Frontend : Jquery, HTML, CSS
+- Backend : Python Django
+- Link(시연영상) : [Youtube](https://youtu.be/pcSs7603vLY)
+
+### Maintainers
+- 김성수 (경희대학교 산업경영공학과) : Modeling
+- 김효준 (경희대학교 산업경영공학과) : Modeling, Frontend
+- 권정일(경희대학교 산업경영공학과) : 디자인, PPT, 발표
+- 신시언 (경희대학교 산업경영공학과) : Full Stack 개발
